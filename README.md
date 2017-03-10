@@ -31,21 +31,13 @@ Click on the link below to download them.
 Usage
 ---
 ### Train networks
-To train original Nvidia network:
-```
-python model.py --nvidia_net
-```
-
-To train modified Nvidia network:
-```
-python model.py --modfied_net
-```
+You can see the whole code on [Behavior_Cloning.ipynb](./Behavior_Cloning.ipynb).
 
 ### Run simulator using trained network
 Run the simulator and select autonomous mode. and then in terminal,
 
 ```
-python drive.py model.h5
+$ python drive.py model.h5
 ```
 The above command will load the trained model and use the model to make predictions on individual images in real-time and send the predicted angle back to the server via a websocket connection. [[Details]](https://github.com/udacity/CarND-Behavioral-Cloning-P3)
 
@@ -124,15 +116,13 @@ To increase the number of data, I used two strategies.
 
 First, I assumed the corresponding steering angle of side cameras be `original steering angle +- 0.23`. The value of `0.23` was set empirically.
 
-![image](./img/placeholder.png)  
+![image](./img/imgs_cameras.png)  
 
-"left and right camera image"
 
 Second, I just flipped images to left and right. The required steering angle of it was simply assumed to be `the same value but opposite sign`.
 
-![image](./img/placeholder.png)  
+![image](./img/flipped.png)  
 
-"flipped images"
 
 ### Optimizer settings
 * Optimizer : Adam
@@ -141,14 +131,19 @@ Second, I just flipped images to left and right. The required steering angle of 
 * Epoch: 1000 (~3 hours to train by using GTX1080)
 
 
-
 Result
 ---
 ### 1. Training and Test MSE of Both Networks
-![image](./img/placeholder.png)  
+The training results were impressive. Modified network works better than orignal one even though the total number of parameters is smaller. 
+![image](./img/loss.png)  
 
 ### 2. Self-driving Performance
-![image](./img/placeholder.png)  
+Both Networks make car drive though the track without collision. In almost situations, the lane keeping performance of both networks is similar.
+
+
+![image](./video/originnet.gif)
+
+![image](./video/modnet.gif)  
 
 
 
