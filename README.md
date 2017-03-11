@@ -4,10 +4,9 @@
 
 Keras/Tensorflow implementation of **End-to-End Learning for self driving car** with Udacity's self-driving car simulator. In this project, the convolution neural network(CNN) introduced by Nvidia[1] was used as a basis:
 
-The goal of this project is to train the network to drive the road normally using steering through the image obtained from the driver's field of view.
+The goal of this project is to train network to calculate **the steering angle** required for lane keeping from **front camera image**.
 
-
-*overview of this project*
+![image](./img/overview.png)
 
 
 Requirements and Downloads
@@ -30,7 +29,14 @@ Click on the link below to download them.
 Usage
 ---
 ### Train networks
-You can see the whole code on [Behavior_Cloning.ipynb](./Behavior_Cloning.ipynb).
+To train network:
+```
+$ python model.py
+```
+
+You can use the following ipython file to learn more about the training process:
+
+[Behavior_Cloning.ipynb](./Behavior_Cloning.ipynb).
 
 ### Run simulator using trained network
 Run the simulator and select autonomous mode. and then in terminal,
@@ -40,8 +46,6 @@ $ python drive.py model.h5
 ```
 The above command will load the trained model and use the model to make predictions on individual images in real-time and send the predicted angle back to the server via a websocket connection. [[Details]](https://github.com/udacity/CarND-Behavioral-Cloning-P3)
 
-### See code in detail
-ipython code with description is available: [[link]](./Playground_02_reduce_params.ipynb)
 
 Model Architectures
 ---
@@ -134,15 +138,16 @@ Result
 ---
 ### 1. Training and Test MSE of Both Networks
 The training results were impressive. Modified network works better than orignal one even though the total number of parameters is smaller. 
+
 ![image](./img/loss.png)  
 
 ### 2. Self-driving Performance
 Both Networks make car drive though the track without collision. In almost situations, the lane keeping performance of both networks is similar.
 
 
-![image](./img/originnet.gif)
+![image](./video/originnet.gif)
 
-![image](./img/modnet.gif)  
+![image](./video/modnet.gif)  
 
 
 
