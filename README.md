@@ -6,7 +6,6 @@ Keras/Tensorflow implementation of **End-to-End Learning for self driving car** 
 
 The goal of this project is to train the network to drive the road normally using steering through the image obtained from the driver's field of view.
 
-![image](./img/placeholder.png)
 
 *overview of this project*
 
@@ -141,9 +140,9 @@ The training results were impressive. Modified network works better than orignal
 Both Networks make car drive though the track without collision. In almost situations, the lane keeping performance of both networks is similar.
 
 
-![image](./video/originnet.gif)
+![image](./img/originnet.gif)
 
-![image](./video/modnet.gif)  
+![image](./img/modnet.gif)  
 
 
 
