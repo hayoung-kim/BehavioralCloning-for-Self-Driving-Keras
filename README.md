@@ -145,9 +145,9 @@ The training results were impressive. Modified network works better than orignal
 Both Networks make car drive though the track without collision. In almost situations, the lane keeping performance of both networks is similar.
 
 
-![image](./video/originnet.gif)
+![image](./img/originnet.gif)
 
-![image](./video/modnet.gif)  
+![image](./img/modnet.gif)  
 
 
 
